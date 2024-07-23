@@ -1,0 +1,122 @@
+====== compile.log ======
+====== test_public.log ======
+>SPLIT<
+>TEST=basic1<
+>Program Output<
+Hello World
+$ $ >Expected Output<
+Hello World
+>SPLIT<
+>TEST=basic2<
+>Program Output<
+Line 1
+Line 2
+$ $ $ >Expected Output<
+Line 1
+Line 2
+>SPLIT<
+>TEST=basic3<
+>Program Output<
+basic1
+basic2
+basic3
+$ $ >Expected Output<
+basic1
+basic2
+basic3
+>SPLIT<
+>TEST=pipefinal<
+>Program Output<
+cat: '|': No such file or directory
+cat: grep: No such file or directory
+cat: touch: No such file or directory
+cat: '|': No such file or directory
+cat: grep: No such file or directory
+cat: txt: No such file or directory
+$ $ >Output File Contents<
+This is CS350 Docker container repository. It includes the CS350 Docker 
+container and the tools to build, run, debug and test OS/161 and Linux
+based programming assignments for CS350. This repository currently expects that you are 
+running in a UNIX or UNIX-like environment that supports docker, such as, MacOS, Linux or Windows WSL. 
+>Error File Contents<
+>Expected Output<
+>Output File Contents<
+>Error File Contents<
+>SPLIT<
+>TEST=pipeone<
+>Program Output<
+This is CS350 Docker container repository. It includes the CS350 Docker 
+container and the tools to build, run, debug and test OS/161 and Linux
+based programming assignments for CS350. This repository currently expects that you are 
+running in a UNIX or UNIX-like environment that supports docker, such as, MacOS, Linux or Windows WSL. 
+cat: '|': No such file or directory
+cat: grep: No such file or directory
+cat: touch: No such file or directory
+$ $ >Output File Contents<
+>Error File Contents<
+>Expected Output<
+>Output File Contents<
+>Error File Contents<
+>SPLIT<
+>TEST=pipetwo<
+>Program Output<
+This is CS350 Docker container repository. It includes the CS350 Docker 
+container and the tools to build, run, debug and test OS/161 and Linux
+based programming assignments for CS350. This repository currently expects that you are 
+running in a UNIX or UNIX-like environment that supports docker, such as, MacOS, Linux or Windows WSL. 
+cat: '|': No such file or directory
+cat: grep: No such file or directory
+cat: touch: No such file or directory
+cat: '|': No such file or directory
+cat: grep: No such file or directory
+cat: txt: No such file or directory
+cat: '|': No such file or directory
+cat: wc: No such file or directory
+$ $ >Output File Contents<
+>Error File Contents<
+>Expected Output<
+      0       0       0
+>Output File Contents<
+>Error File Contents<
+>SPLIT<
+>TEST=redirinput<
+>Program Output<
+$ $ >Output File Contents<
+>Error File Contents<
+>Expected Output<
+>Output File Contents<
+>Error File Contents<
+>SPLIT<
+>TEST=redirinputoutput<
+>Program Output<
+$ $ >Output File Contents<
+>Error File Contents<
+>Expected Output<
+>Output File Contents<
+>Error File Contents<
+>SPLIT<
+>TEST=rediroutput<
+>Program Output<
+$ $ >Output File Contents<
+basic
+redirpipe
+run.sh
+sampletxt
+verify.py
+>Error File Contents<
+>Expected Output<
+>Output File Contents<
+basic
+redirpipe
+run.sh
+sampletxt
+verify.py
+>Error File Contents<
+>SPLIT<
+>TEST=rediroutputinput<
+>Program Output<
+$ $ >Output File Contents<
+>Error File Contents<
+>Expected Output<
+>Output File Contents<
+>Error File Contents<

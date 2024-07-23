@@ -1,0 +1,195 @@
+====== test_public.log ======
+>SPLIT<
+>TEST=test_cat<
+>Program Output<
+[RESULT]Success
+>Expected Output<
+[RESULT]Success
+>SPLIT<
+>TEST=test_copyin<
+>Program Output<
+[RESULT]Success
+/assignments/FINAL//tests/test_copyin.sh: line 41:    91 Done                    cat  <<EOF
+debug
+mount
+copyout 2 $SCRATCH/2.txt
+copyout 3 $SCRATCH/3.txt
+create
+copyin $SCRATCH/3.txt 0
+create
+copyin $SCRATCH/2.txt 1
+copyout 0 $SCRATCH/3.copy
+copyout 1 $SCRATCH/2.copy
+debug
+EOF
+
+        92 Segmentation fault      | ./bin/sfssh $SCRATCH/image.20 20 > /dev/null 2>&1
+md5sum: /tmp/tmp.iadZS8VuzW/2.copy: No such file or directory
+/assignments/FINAL//tests/test_copyin.sh: line 43: [: =: unary operator expected
+[RESULT]Failure
+/assignments/FINAL//tests/test_copyin.sh: line 69:    97 Done                    cat  <<EOF
+debug
+mount
+copyout 1 $SCRATCH/1.txt
+copyout 2 $SCRATCH/2.txt
+copyout 9 $SCRATCH/9.txt
+create
+copyin $SCRATCH/1.txt 0
+create
+copyin $SCRATCH/2.txt 3
+create
+copyin $SCRATCH/9.txt 4
+debug
+copyout 0 $SCRATCH/1.copy
+copyout 3 $SCRATCH/2.copy
+copyout 4 $SCRATCH/9.copy
+EOF
+
+        98 Segmentation fault      | ./bin/sfssh $SCRATCH/image.200 200 > /dev/null 2>&1
+[RESULT]Failure
+>Expected Output<
+[RESULT]Success
+[RESULT]Success
+[RESULT]Success
+>SPLIT<
+>TEST=test_copyout<
+>Program Output<
+[RESULT]Success
+[RESULT]Success
+[RESULT]Success
+>Expected Output<
+[RESULT]Success
+[RESULT]Success
+[RESULT]Success
+>SPLIT<
+>TEST=test_create<
+>Program Output<
+[RESULT]Success
+>Expected Output<
+[RESULT]Success
+>SPLIT<
+>TEST=test_debug<
+>Program Output<
+[RESULT]Success
+[RESULT]Success
+[RESULT]Success
+>Expected Output<
+[RESULT]Success
+[RESULT]Success
+[RESULT]Success
+>SPLIT<
+>TEST=test_format<
+>Program Output<
+[RESULT]Success
+[RESULT]Success
+[RESULT]Success
+>Expected Output<
+[RESULT]Success
+[RESULT]Success
+[RESULT]Success
+>SPLIT<
+>TEST=test_mount<
+>Program Output<
+[RESULT]Success
+[RESULT]Success
+[RESULT]Success
+[RESULT]Success
+[RESULT]Success
+[RESULT]Success
+[RESULT]Success
+[RESULT]Success
+>Expected Output<
+[RESULT]Success
+[RESULT]Success
+[RESULT]Success
+[RESULT]Success
+[RESULT]Success
+[RESULT]Success
+[RESULT]Success
+[RESULT]Success
+>SPLIT<
+>TEST=test_remove<
+>Program Output<
+[RESULT]Success
+[RESULT]Failure
+--- /dev/fd/63	2022-04-20 20:13:55.601603228 +0000
++++ /dev/fd/62	2022-04-20 20:13:55.605603210 +0000
+@@ -19,13 +19,13 @@
+     128 inodes
+ Inode 0:
+     size: 965 bytes
+-    direct blocks: 2
++    direct blocks: 3
+ Inode 1:
+     size: 965 bytes
+     direct blocks: 2
+ Inode 2:
+     size: 965 bytes
+-    direct blocks: 3
++    direct blocks: 4
+ removed inode 0.
+ SuperBlock:
+     magic number is valid
+@@ -37,7 +37,20 @@
+     direct blocks: 2
+ Inode 2:
+     size: 965 bytes
+-    direct blocks: 3
++    direct blocks: 4
+ created inode 0.
+ 965 bytes copied
+-Magic number is valid: `
++SuperBlock:
++    magic number is valid
++    5 blocks
++    1 inode blocks
++    128 inodes
++Inode 0:
++    size: 965 bytes
++    direct blocks: 3
++Inode 1:
++    size: 965 bytes
++    direct blocks: 2
++Inode 2:
++    size: 965 bytes
++    direct blocks: 4
+[RESULT]Failure
+--- /dev/fd/63	2022-04-20 20:13:55.613603175 +0000
++++ /dev/fd/62	2022-04-20 20:13:55.613603175 +0000
+@@ -23,3 +23,21 @@
+     size: 27160 bytes
+     direct blocks: 4 5 6 7 8
+     indirect block: 9
++    indirect data blocks: 13 14
++created inode 0.
++27160 bytes copied
++SuperBlock:
++    magic number is valid
++    20 blocks
++    2 inode blocks
++    256 inodes
++Inode 0:
++    size: 27160 bytes
++    direct blocks: 3 10 11 12 15
++    indirect block: 16
++    indirect data blocks: 17 18
++Inode 2:
++    size: 27160 bytes
++    direct blocks: 4 5 6 7 8
++    indirect block: 9
++    indirect data blocks: 13 14
+>Expected Output<
+[RESULT]Success
+[RESULT]Success
+[RESULT]Success
+>SPLIT<
+>TEST=test_stat<
+>Program Output<
+[RESULT]Success
+[RESULT]Success
+[RESULT]Success
+>Expected Output<
+[RESULT]Success
+[RESULT]Success
+[RESULT]Success
+====== compile.log ======
